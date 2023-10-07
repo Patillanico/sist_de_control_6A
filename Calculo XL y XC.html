@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Cálculo de XL y XC</title>
+</head>
+<body>
+  <script>
+    var frecuencia = 50; // Frecuencia en Hz
+    var inductancia = 0.1; // Inductancia en Henrios (H)
+    var capacitancia = 0.01; // Capacitancia en Faradios (F)
+
+    // Cálculo de XL (Reactancia Inductiva)
+    var XL = 2 * Math.PI * frecuencia * inductancia;
+
+    // Cálculo de XC (Reactancia Capacitiva)
+    var XC = 1 / (2 * Math.PI * frecuencia * capacitancia);
+
+    document.write("<p>Frecuencia: " + frecuencia + " Hz</p>");
+    document.write("<p>Inductancia: " + inductancia + " H</p>");
+    document.write("<p>Capacitancia: " + capacitancia + " F</p>");
+    document.write("<p>Reactancia Inductiva (XL): " + XL + " ohmios</p>");
+    document.write("<p>Reactancia Capacitiva (XC): " + XC + " ohmios</p>");
+  </script>
+</body>
+</html>
