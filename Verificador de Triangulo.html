@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Verificador de Triángulo</title>
+</head>
+<body>
+    <h1>Verificador de Triángulo</h1>
+    <h2>Ingrese tres lados</h2>
+    <label for="lado1">Lado 1:</label>
+    <input type="number" id="lado1"><br>
+
+    <label for="lado2">Lado 2:</label>
+    <input type="number" id="lado2"><br>
+
+    <label for="lado3">Lado 3:</label>
+    <input type="number" id="lado3"><br>
+
+    <button onclick="verificarTriangulo()">Verificar</button><br>
+
+    <p>¿Es un triángulo? <span id="resultadoTriangulo"></span></p>
+
+    <script>
+        function verificarTriangulo() {
+            var lado1 = parseFloat(document.getElementById("lado1").value);
+            var lado2 = parseFloat(document.getElementById("lado2").value);
+            var lado3 = parseFloat(document.getElementById("lado3").value);
+
+            // Verificar si es un triángulo
+            var esTriangulo = (lado1 + lado2 > lado3) && (lado2 + lado3 > lado1) && (lado3 + lado1 > lado2);
+
+            // Mostrar resultado
+            if (esTriangulo) {
+                document.getElementById("resultadoTriangulo").textContent = "Sí, es un triángulo.";
+            } else {
+                document.getElementById("resultadoTriangulo").textContent = "No, no es un triángulo.";
+            }
+        }
+    </script>
+</body>
+</html>
