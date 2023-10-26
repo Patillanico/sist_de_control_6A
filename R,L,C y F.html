@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Calculadora de Impedancia</title>
+</head>
+<body>
+  <h1>Calculadora de Impedancia</h1>
+  <p>Ingresa los valores de R, L, C y F para calcular las funciones:</p>
+  
+  <label for="resistencia">R (Resistencia en ohmios):</label>
+  <input type="number" id="resistencia"><br>
+
+  <label for="inductancia">L (Inductancia en henrios):</label>
+  <input type="number" id="inductancia"><br>
+
+  <label for="capacitancia">C (Capacitancia en faradios):</label>
+  <input type="number" id="capacitancia"><br>
+
+  <label for="frecuencia">F (Frecuencia en hertzios):</label>
+  <input type="number" id="frecuencia"><br>
+
+  <button onclick="calcularFunciones()">Calcular</button><br>
+
+  <h2>Resultados:</h2>
+  <p>XL (Reactancia Inductiva): <span id="xlResultado"></span></p>
+  <p>XC (Reactancia Capacitiva): <span id="xcResultado"></span></p>
+  <p>Mod(Z) (Módulo de Impedancia): <span id="modZResultado"></span></p>
+  <p>Phi (Ángulo de Fase): <span id="phiResultado"></span></p>
+  <p>Parte Real de Z: <span id="parteRealResultado"></span></p>
+  <p>Parte Imaginaria de Z: <span id="parteImaginariaResultado"></span></p>
+
+  <script>
+    function calcularFunciones() {
+      var R = parseFloat(document.getElementById("resistencia").value);
+      var L = parseFloat(document.getElementById("inductancia").value);
+      var C = parseFloat(document.getElementById("capacitancia").value);
+      var F = parseFloat(document.getElementById("frecuencia").value);
+
+      // Calcular XL y XC
+      var XL = 2 * Math.PI * F * L;
+      var XC = 1 / (2 * Math.PI * F * C);
+
+      // Calcular Impedancia (Z)
+      var Z = Math.sqrt(Math.pow(R, 2) + Math.pow(XL - XC, 2));
+
+      // Calcular Ángulo de Fase (phi)
+      var phi = Math.atan((XL - XC) / R);
+
+      // Mostrar resultados en la página
+      document.getElementById("xlResultado").textContent = XL.toFixed(2);
+      document.getElementById("xcResultado").textContent = XC.toFixed(2);
+      document.getElementById("modZResultado").textContent = Z.toFixed(2);
+      document.getElementById("phiResultado").textContent = phi.toFixed(2);
+      document.getElementById("parteRealResultado").textContent = R.toFixed(2);
+      document.getElementById("parteImaginariaResultado").textContent = (XL - XC).toFixed(2);
+    }
+  </script>
+</body>
+</html>
