@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Energía Potencial y Velocidad</title>
+</head>
+<body>
+    <h1>Energía Potencial y Velocidad</h1>
+
+    <script>
+        function calcularEp(masa, altura) {
+            const gravedad = 9.8
+            return masa * gravedad * altura;
+        }
+
+        function calcularVelocidadAlSuelo(energiaPotencial, masa) {
+            return Math.sqrt((2 * energiaPotencial) / masa);
+        }
+
+        function pedirDatos() {
+            const masa = parseFloat(prompt("Ingrese la masa del cuerpo (en kg):"));
+            const altura = parseFloat(prompt("Ingrese la altura desde la que cae (en metros):"));
+
+            const energiaPotencial = calcularEp(masa, altura);
+            const velocidad = calcularVelocidadAlSuelo(energiaPotencial, masa);
+
+            if (velocidad > 100) {
+                alert("La velocidad al llegar al suelo es " + velocidad.toFixed(2) + " m/s.");
+            } else {
+                alert("La velocidad al llegar al suelo es " + velocidad.toFixed(2) + " m/s.");
+            }
+        }
+
+        pedirDatos();
+    </script>
+</body>
+</html>
