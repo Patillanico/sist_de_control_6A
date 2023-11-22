@@ -1,0 +1,20 @@
+<html>
+
+<head>
+
+  <title>Mi página con enlace a una imagen</title>
+
+</head>
+
+<body>
+
+  <a href="https://www.lanacion.com.ar/resizer/v2/the-economist-escribio-un-perfil-sobre-javier-VSDQMDBDUFD7HPYXLQAIKCROYM.jpg?auth=2f450fd40f4e68574cb871d40d5c594a148190cc492590ef1f8700257a44c444&width=1200&height=800&quality=80&smart=false">
+
+    <img src="1200" alt="Futuro Presidente">
+
+  </a>
+
+</body>
+
+</html>
+
